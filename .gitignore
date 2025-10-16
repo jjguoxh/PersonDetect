@@ -152,7 +152,9 @@ Thumbs.db
 *.pb
 *.h5
 *.keras
-
+*.jpg
+*.mk
+*.png
 # Output directories
 runs/
 result/
