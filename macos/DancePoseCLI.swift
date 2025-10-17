@@ -115,8 +115,7 @@ final class DancePoseDetector {
         for a in 0..<A {
             let objRaw = valueAt(4, a)
             let objConf = (objRaw < 0 || objRaw > 1) ? sigmoid(objRaw) : objRaw
-            if objConf < confidence && !debug { continue }
-
+            if objConf < confidence { continue }
             // Heuristics: some exports output normalized [0,1], others pixel space [0..input]
             let cxRaw = valueAt(0, a)
             let cyRaw = valueAt(1, a)
@@ -127,7 +126,8 @@ final class DancePoseDetector {
             let cy = CGFloat(isBoxNormalized ? cyRaw * Float(inputH) : cyRaw)
             let w  = CGFloat(isBoxNormalized ? wRaw  * Float(inputW) : wRaw)
             let h  = CGFloat(isBoxNormalized ? hRaw  * Float(inputH) : hRaw)
-
+            // 过滤过小的框以降低误检
+            if w < 32 || h < 32 { continue }
             let x = max(0, cx - w / 2.0)
             let y = max(0, cy - h / 2.0)
             var kps: [Keypoint] = []
@@ -155,6 +155,11 @@ final class DancePoseDetector {
                     let kyClamped = min(max(ky, 0), CGFloat(inputH - 1))
                     kps.append(Keypoint(x: kxClamped, y: kyClamped, conf: kc))
                 }
+            }
+            // 至少需要一定数量的关键点达到置信度阈值
+            if hasKeypoints {
+                let validCount = kps.reduce(0) { $1.conf >= self.keypointThreshold ? $0 + 1 : $0 }
+                if validCount < 6 { continue }
             }
             candidates.append(Pose(bbox: CGRect(x: x, y: y, width: w, height: h), score: objConf, keypoints: kps))
         }
@@ -186,7 +191,8 @@ final class DancePoseDetector {
               let feature = observations.first?.featureValue.multiArrayValue else {
             return []
         }
-        return decodePoses(from: feature, inputW: 640, inputH: 640, maxDet: 10)
+        let maxDet = CommandLine.arguments.contains("--single") ? 1 : 10
+        return decodePoses(from: feature, inputW: 640, inputH: 640, maxDet: maxDet)
     }
 
     // Helpers for decode

@@ -11,6 +11,14 @@
 - **自动检测并下载模型文件**
 - **优化的头发边缘处理**
 
+## 相关工具
+
+除了人体边缘检测，我们还提供了以下相关功能：
+
+### 景深效果（背景虚化）
+- **[depth_of_field_effect.py](file:///Users/guoxh/Documents/project/yoloset/src/depth_of_field_effect.py)** - 基于人体轮廓检测实现景深效果，模拟单反相机M档拍照的背景虚化效果
+- **[README_DEPTH_OF_FIELD.md](file:///Users/guoxh/Documents/project/yoloset/README_DEPTH_OF_FIELD.md)** - 景深效果使用说明
+
 ## 头发边缘优化特性
 
 本工具特别优化了头发等细节部分的边缘处理：
@@ -65,7 +73,7 @@ python src/human_edge_detector.py --input path/to/input/directory --output path/
 - `--output` 或 `-o`: 输出图片路径或目录
 - `--model` 或 `-m`: YOLO分割模型路径（默认: model/yolo11x-seg.pt）
 - `--confidence` 或 `-c`: 置信度阈值（默认: 0.5）
-- `--no-gpu`: 禁用GPU加速，使用CPU处理
+- `--no-gpu`: 福用GPU加速，使用CPU处理
 
 ### 5. 示例
 

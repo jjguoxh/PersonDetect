@@ -322,7 +322,7 @@ class BatchDancePoseDetector:
 
 def main():
     # 检查是否有预训练的姿态估计模型
-    pose_model_path = "yolo11n-pose.pt"
+    pose_model_path = "model/yolo11n-pose.pt"
     
     # 如果没有找到姿态模型，尝试下载
     if not os.path.exists(pose_model_path):
