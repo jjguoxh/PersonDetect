@@ -1,0 +1,255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1BF0001 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF1001 /* App.swift */; };
+		A1BF0002 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF1002 /* CameraView.swift */; };
+		A1BF0003 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF1003 /* CameraViewController.swift */; };
+		A1BF0004 /* DetectionPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF1004 /* DetectionPipeline.swift */; };
+		A1BF0005 /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF1005 /* OverlayRenderer.swift */; };
+		A1BF0011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1AF1011 /* Assets.xcassets */; };
+		A1BF0012 /* Models/yolo11x.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = A1AF1012 /* Models/yolo11x.mlpackage */; };
+		A1BF0013 /* Models/yolon-pose.mlpackage in Resources */ = {isa = PBXBuildFile; fileRef = A1AF1013 /* Models/yolon-pose.mlpackage */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1AF1001 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		A1AF1002 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		A1AF1003 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A1AF1004 /* DetectionPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionPipeline.swift; sourceTree = "<group>"; };
+		A1AF1005 /* OverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayRenderer.swift; sourceTree = "<group>"; };
+		A1AF1010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1AF1011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1AF1012 /* Models/yolo11x.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = Models/yolo11x.mlpackage; sourceTree = "<group>"; };
+		A1AF1013 /* Models/yolon-pose.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper.mlpackage; path = "Models/yolon-pose.mlpackage"; sourceTree = "<group>"; };
+		A1AF10FF /* RealTimeDetectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = RealTimeDetectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1CF2001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1DF3000 = {
+			isa = PBXGroup;
+			children = (
+				A1EF4000 /* RealTimeDetectApp */,
+				A1EF40FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1EF4000 /* RealTimeDetectApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF1001 /* App.swift */,
+				A1AF1002 /* CameraView.swift */,
+				A1AF1003 /* CameraViewController.swift */,
+				A1AF1004 /* DetectionPipeline.swift */,
+				A1AF1005 /* OverlayRenderer.swift */,
+				A1AF1011 /* Assets.xcassets */,
+				A1AF1012 /* Models/yolo11x.mlpackage */,
+				A1AF1013 /* Models/yolon-pose.mlpackage */,
+				A1AF1010 /* Info.plist */,
+			);
+			name = RealTimeDetectApp;
+			path = .;
+			sourceTree = "<group>";
+		};
+		A1EF40FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF10FF /* RealTimeDetectApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10F5001 /* RealTimeDetectApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A12F7001 /* Build configuration list for PBXNativeTarget "RealTimeDetectApp" */;
+			buildPhases = (
+				A1CF1001 /* Sources */,
+				A1CF2001 /* Frameworks */,
+				A1CF3001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RealTimeDetectApp;
+			productName = RealTimeDetectApp;
+			productReference = A1AF10FF /* RealTimeDetectApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10F6001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					A10F5001 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = A12F7000 /* Build configuration list for PBXProject "RealTimeDetectApp" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1DF3000;
+			productRefGroup = A1EF40FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10F5001 /* RealTimeDetectApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1CF3001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1BF0011 /* Assets.xcassets in Resources */,
+				A1BF0012 /* Models/yolo11x.mlpackage in Resources */,
+				A1BF0013 /* Models/yolon-pose.mlpackage in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1CF1001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1BF0001 /* App.swift in Sources */,
+				A1BF0002 /* CameraView.swift in Sources */,
+				A1BF0003 /* CameraViewController.swift in Sources */,
+				A1BF0004 /* DetectionPipeline.swift in Sources */,
+				A1BF0005 /* OverlayRenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A12F7002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AC64Q45XNT;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RealTimeDetectApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		A12F7003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AC64Q45XNT;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RealTimeDetectApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A12F7004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		A12F7005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A12F7000 /* Build configuration list for PBXProject "RealTimeDetectApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A12F7004 /* Debug */,
+				A12F7005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A12F7001 /* Build configuration list for PBXNativeTarget "RealTimeDetectApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A12F7002 /* Debug */,
+				A12F7003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A10F6001 /* Project object */;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RealTimeDetectApp 集成说明</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 24px; color: #222; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; margin-top: 24px; }
+    code { background: #f5f5f5; padding: 2px 4px; border-radius: 4px; }
+    li { margin: 6px 0; }
+    .box { border: 1px solid #eee; padding: 12px; border-radius: 8px; background: #fafafa; }
+  </style>
+</head>
+<body>
+  <h1>RealTimeDetectApp（iOS）</h1>
+  <p>使用 iPhone 后摄像头进行实时物体检测（底部椭圆）与人体关键点检测（骨架）。</p>
+
+  <div class="box">
+    <h2>模型位置</h2>
+    <ul>
+      <li>已复制到：<code>ios/RealTimeDetectApp/Models/</code></li>
+      <li>文件：<code>yolo11x.mlpackage</code>、<code>yolon-pose.mlpackage</code></li>
+      <li>代码已优先从 <code>Models/</code> 子目录加载（未找到时回退到 Bundle 根目录）。</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>集成到 Xcode 的步骤</h2>
+    <ol>
+      <li>在 Xcode 创建 <code>iOS App</code>（SwiftUI），或在现有工程中新建 Target。</li>
+      <li>将本目录下的 <code>App.swift</code>、<code>CameraView.swift</code>、<code>CameraViewController.swift</code>、<code>DetectionPipeline.swift</code>、<code>OverlayRenderer.swift</code> 与 <code>Info.plist</code> 添加到 iOS Target，并确保 <em>Target Membership</em> 勾选。</li>
+      <li>添加模型：将 <code>ios/RealTimeDetectApp/Models/</code> 下的两个 <code>.mlpackage</code> 加入工程并勾选 Target Membership，运行时代码会自动编译加载。</li>
+      <li>在 <code>Info.plist</code> 设置相机权限：<code>NSCameraUsageDescription</code> 填写用途，例如“需要使用后摄像头进行实时检测”。</li>
+      <li>连接真机，选择设备并运行，首次会弹出相机权限对话框。</li>
+    </ol>
+  </div>
+
+  <div class="box">
+    <h2>使用方式</h2>
+    <ul>
+      <li>顶部 <strong>模式切换</strong>：<code>椭圆</code>（物体检测）与 <code>关节</code>（人体关键点）。</li>
+      <li><strong>conf</strong> 滑块：调节检测置信度阈值；<strong>kp</strong> 滑块仅在“关节”模式显示，调节关键点阈值。</li>
+      <li>为保证覆盖层对齐，预览层使用 <code>.resizeAspect</code>。</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>调优建议</h2>
+    <ul>
+      <li>若误检较多，尝试 <code>conf=0.6</code>、<code>kp=0.4</code>。</li>
+      <li>需要多人检测可在 <code>predictPoses</code> 传入更大的 <code>maxDet</code>（默认 5）。</li>
+    </ul>
+  </div>
+
+  <p>更多说明请参考仓库中的 <code>README_iOS.md</code>。</p>
+</body>
+</html>
