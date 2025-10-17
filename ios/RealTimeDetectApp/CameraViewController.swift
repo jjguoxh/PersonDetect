@@ -60,7 +60,11 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
 
     func configureSession() {
         session.beginConfiguration()
-        session.sessionPreset = .high
+        if session.canSetSessionPreset(.hd1280x720) {
+            session.sessionPreset = .hd1280x720
+        } else {
+            session.sessionPreset = .high
+        }
         guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else { return }
         guard let input = try? AVCaptureDeviceInput(device: device) else { return }
         if session.canAddInput(input) { session.addInput(input) }
@@ -77,7 +81,16 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
     func startSession() { if !session.isRunning { session.startRunning() } }
     func stopSession() { if session.isRunning { session.stopRunning() } }
 
+    private var lastInferenceTS: CFAbsoluteTime = 0
+    var targetInferenceFPS: Double = 20 // 可调整的推理帧率上限
+
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        let now = CFAbsoluteTimeGetCurrent()
+        let interval = 1.0 / targetInferenceFPS
+        if now - lastInferenceTS < interval {
+            return // 节流推理，降低每帧开销
+        }
+        lastInferenceTS = now
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
         switch mode {

@@ -6,6 +6,8 @@ import CoreGraphics
 // MARK: - Object Detection via VNRecognizedObjectObservation
 final class ObjectDetectPipeline {
     private let vnModel: VNCoreMLModel
+    private let sequenceHandler = VNSequenceRequestHandler()
+    private let objectRequest: VNCoreMLRequest
     init(modelName: String) throws {
         // 优先在 iOS 目录的 Models 子目录查找
         let config = MLModelConfiguration()
@@ -20,14 +22,15 @@ final class ObjectDetectPipeline {
         } else {
             throw NSError(domain: "ObjectDetectPipeline", code: -1, userInfo: [NSLocalizedDescriptionKey: "未找到模型资源: \(modelName) (查找: Models/|Bundle)"])
         }
+        let req = VNCoreMLRequest(model: vnModel)
+        req.imageCropAndScaleOption = .scaleFill
+        req.usesCPUOnly = false
+        req.preferBackgroundProcessing = true
+        self.objectRequest = req
     }
     func detectObjects(in pixelBuffer: CVPixelBuffer, minConfidence: Float) throws -> [VNRecognizedObjectObservation] {
-        let request = VNCoreMLRequest(model: vnModel)
-        request.imageCropAndScaleOption = .scaleFill
-        request.usesCPUOnly = false
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
-        try handler.perform([request])
-        guard let observations = request.results as? [VNRecognizedObjectObservation] else { return [] }
+        try sequenceHandler.perform([objectRequest], on: pixelBuffer)
+        guard let observations = objectRequest.results as? [VNRecognizedObjectObservation] else { return [] }
         return observations.filter { $0.confidence >= minConfidence }
     }
     private static func resolveModelURL(modelName: String, preferredExt: String) -> URL? {
@@ -48,6 +51,8 @@ struct Pose { var bbox: CGRect; var score: Float; var keypoints: [Keypoint] }
 
 final class PoseDetectPipeline {
     private let vnModel: VNCoreMLModel
+    private let sequenceHandler = VNSequenceRequestHandler()
+    private let poseRequest: VNCoreMLRequest
     init(modelName: String) throws {
         let config = MLModelConfiguration()
         config.computeUnits = .all // GPU/ANE 优先
@@ -61,6 +66,11 @@ final class PoseDetectPipeline {
         } else {
             throw NSError(domain: "PoseDetectPipeline", code: -1, userInfo: [NSLocalizedDescriptionKey: "未找到模型资源: \(modelName) (查找: Models/|Bundle)"])
         }
+        let req = VNCoreMLRequest(model: vnModel)
+        req.imageCropAndScaleOption = .scaleFit
+        req.usesCPUOnly = false
+        req.preferBackgroundProcessing = true
+        self.poseRequest = req
     }
 
     private static func resolveModelURL(modelName: String, preferredExt: String) -> URL? {
@@ -75,16 +85,11 @@ final class PoseDetectPipeline {
     }
 
     func predictPoses(in pixelBuffer: CVPixelBuffer, confidence: Float, kpThreshold: Float, maxDet: Int = 5) throws -> [Pose] {
-        let request = VNCoreMLRequest(model: vnModel)
-        request.imageCropAndScaleOption = .scaleFit
-        request.usesCPUOnly = false
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
-        try handler.perform([request])
-        guard let observations = request.results as? [VNCoreMLFeatureValueObservation],
+        try sequenceHandler.perform([poseRequest], on: pixelBuffer)
+        guard let observations = poseRequest.results as? [VNCoreMLFeatureValueObservation],
               let feature = observations.first?.featureValue.multiArrayValue else {
             return []
         }
-        // decode from feature as in macOS CLI
         return decodePoses(from: feature, inputW: 640, inputH: 640, confidence: confidence, kpThreshold: kpThreshold, maxDet: maxDet)
     }
 
