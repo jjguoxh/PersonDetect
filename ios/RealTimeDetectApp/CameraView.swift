@@ -16,6 +16,7 @@ struct CameraView: View {
                 OverlayContainer(layer: controller.overlayLayer)
             }
             .background(Color.black)
+            .ignoresSafeArea() // 让预览层与覆盖层在 iPhone/iPad 上都填满屏幕安全区域
 
             HStack {
                 Picker("模式", selection: $mode) {

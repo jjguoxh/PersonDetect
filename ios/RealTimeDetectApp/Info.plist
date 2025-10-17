@@ -28,6 +28,15 @@
 		<string>camera</string>
 		<string>arm64</string>
 	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>需要使用后摄像头进行实时物体与人体关节检测。</string>
 </dict>

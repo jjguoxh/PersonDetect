@@ -18,10 +18,36 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
     private var objectPipeline: ObjectDetectPipeline?
     private var posePipeline: PoseDetectPipeline?
 
+    // Aggregated overlay layers (GPU friendly)
+    private let ellipsesLayer = CAShapeLayer()
+    private let poseLinesLayer = CAShapeLayer()
+    private let poseCirclesLayer = CAShapeLayer()
+
     override init() {
         super.init()
         overlayLayer.frame = .zero
         overlayLayer.masksToBounds = true
+        overlayLayer.contentsScale = UIScreen.main.scale
+
+        // Configure aggregated layers once
+        ellipsesLayer.strokeColor = UIColor.yellow.cgColor
+        ellipsesLayer.fillColor = UIColor.yellow.withAlphaComponent(0.2).cgColor
+        ellipsesLayer.lineWidth = 3
+        ellipsesLayer.contentsScale = UIScreen.main.scale
+        overlayLayer.addSublayer(ellipsesLayer)
+
+        poseLinesLayer.strokeColor = UIColor.green.cgColor
+        poseLinesLayer.fillColor = UIColor.clear.cgColor
+        poseLinesLayer.lineWidth = 2.5
+        poseLinesLayer.contentsScale = UIScreen.main.scale
+        overlayLayer.addSublayer(poseLinesLayer)
+
+        poseCirclesLayer.fillColor = UIColor.yellow.cgColor // 统一颜色，减少多层创建
+        poseCirclesLayer.strokeColor = UIColor.white.cgColor
+        poseCirclesLayer.lineWidth = 1.5
+        poseCirclesLayer.contentsScale = UIScreen.main.scale
+        overlayLayer.addSublayer(poseCirclesLayer)
+
         setupPipelines()
         configureSession()
     }
@@ -59,16 +85,27 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
             if let results = try? objectPipeline?.detectObjects(in: pixelBuffer, minConfidence: confidence) {
                 DispatchQueue.main.async {
                     let frameSize = self.overlayLayer.bounds.size
-                    self.overlayLayer.sublayers?.forEach { $0.removeFromSuperlayer() }
-                    OverlayRenderer.drawEllipses(on: self.overlayLayer, boxes: results, frameSize: frameSize)
+                    CATransaction.begin(); CATransaction.setDisableActions(true)
+                    self.ellipsesLayer.frame = CGRect(origin: .zero, size: frameSize)
+                    self.ellipsesLayer.path = OverlayRenderer.makeEllipsesPath(boxes: results, frameSize: frameSize)
+                    // 清空姿态层
+                    self.poseLinesLayer.path = nil
+                    self.poseCirclesLayer.path = nil
+                    CATransaction.commit()
                 }
             }
         case .pose:
             if let poses = try? posePipeline?.predictPoses(in: pixelBuffer, confidence: confidence, kpThreshold: kpThreshold) {
                 DispatchQueue.main.async {
                     let frameSize = self.overlayLayer.bounds.size
-                    self.overlayLayer.sublayers?.forEach { $0.removeFromSuperlayer() }
-                    OverlayRenderer.drawPoses(on: self.overlayLayer, poses: poses, frameSize: frameSize)
+                    CATransaction.begin(); CATransaction.setDisableActions(true)
+                    self.ellipsesLayer.path = nil
+                    self.poseLinesLayer.frame = CGRect(origin: .zero, size: frameSize)
+                    self.poseCirclesLayer.frame = CGRect(origin: .zero, size: frameSize)
+                    let paths = OverlayRenderer.makePosePaths(poses: poses, frameSize: frameSize)
+                    self.poseLinesLayer.path = paths.lines
+                    self.poseCirclesLayer.path = paths.circles
+                    CATransaction.commit()
                 }
             }
         }

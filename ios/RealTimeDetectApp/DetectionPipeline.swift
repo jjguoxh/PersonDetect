@@ -8,12 +8,14 @@ final class ObjectDetectPipeline {
     private let vnModel: VNCoreMLModel
     init(modelName: String) throws {
         // 优先在 iOS 目录的 Models 子目录查找
+        let config = MLModelConfiguration()
+        config.computeUnits = .all // GPU/ANE 优先
         if let url = Self.resolveModelURL(modelName: modelName, preferredExt: "mlmodelc") {
-            let mlmodel = try MLModel(contentsOf: url)
+            let mlmodel = try MLModel(contentsOf: url, configuration: config)
             self.vnModel = try VNCoreMLModel(for: mlmodel)
         } else if let packageURL = Self.resolveModelURL(modelName: modelName, preferredExt: "mlpackage") {
             let compiledURL = try MLModel.compileModel(at: packageURL)
-            let mlmodel = try MLModel(contentsOf: compiledURL)
+            let mlmodel = try MLModel(contentsOf: compiledURL, configuration: config)
             self.vnModel = try VNCoreMLModel(for: mlmodel)
         } else {
             throw NSError(domain: "ObjectDetectPipeline", code: -1, userInfo: [NSLocalizedDescriptionKey: "未找到模型资源: \(modelName) (查找: Models/|Bundle)"])
@@ -22,6 +24,7 @@ final class ObjectDetectPipeline {
     func detectObjects(in pixelBuffer: CVPixelBuffer, minConfidence: Float) throws -> [VNRecognizedObjectObservation] {
         let request = VNCoreMLRequest(model: vnModel)
         request.imageCropAndScaleOption = .scaleFill
+        request.usesCPUOnly = false
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
         try handler.perform([request])
         guard let observations = request.results as? [VNRecognizedObjectObservation] else { return [] }
@@ -46,12 +49,14 @@ struct Pose { var bbox: CGRect; var score: Float; var keypoints: [Keypoint] }
 final class PoseDetectPipeline {
     private let vnModel: VNCoreMLModel
     init(modelName: String) throws {
+        let config = MLModelConfiguration()
+        config.computeUnits = .all // GPU/ANE 优先
         if let url = Self.resolveModelURL(modelName: modelName, preferredExt: "mlmodelc") {
-            let mlmodel = try MLModel(contentsOf: url)
+            let mlmodel = try MLModel(contentsOf: url, configuration: config)
             self.vnModel = try VNCoreMLModel(for: mlmodel)
         } else if let packageURL = Self.resolveModelURL(modelName: modelName, preferredExt: "mlpackage") {
             let compiledURL = try MLModel.compileModel(at: packageURL)
-            let mlmodel = try MLModel(contentsOf: compiledURL)
+            let mlmodel = try MLModel(contentsOf: compiledURL, configuration: config)
             self.vnModel = try VNCoreMLModel(for: mlmodel)
         } else {
             throw NSError(domain: "PoseDetectPipeline", code: -1, userInfo: [NSLocalizedDescriptionKey: "未找到模型资源: \(modelName) (查找: Models/|Bundle)"])
@@ -72,6 +77,7 @@ final class PoseDetectPipeline {
     func predictPoses(in pixelBuffer: CVPixelBuffer, confidence: Float, kpThreshold: Float, maxDet: Int = 5) throws -> [Pose] {
         let request = VNCoreMLRequest(model: vnModel)
         request.imageCropAndScaleOption = .scaleFit
+        request.usesCPUOnly = false
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:])
         try handler.perform([request])
         guard let observations = request.results as? [VNCoreMLFeatureValueObservation],
