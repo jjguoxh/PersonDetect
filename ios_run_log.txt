@@ -1,0 +1,66 @@
++ set -euo pipefail
++ APP_NAME=RealTimeDetectApp
++ SCHEME=RealTimeDetectApp
++ PROJECT=RealTimeDetectApp.xcodeproj
++ BUNDLE_ID=com.yoloset.RealTimeDetectApp
++ DEVICE_NAME='iPhone 15'
++ DERIVED_DATA=build
++ main
++ ensure_developer_dir
++ local current
+++ xcode-select -p
++ current=/Applications/Xcode.app/Contents/Developer
++ [[ -z /Applications/Xcode.app/Contents/Developer ]]
++ log '使用 Xcode Developer 目录：/Applications/Xcode.app/Contents/Developer'
++ echo '[INFO] 使用 Xcode Developer 目录：/Applications/Xcode.app/Contents/Developer'
+[INFO] 使用 Xcode Developer 目录：/Applications/Xcode.app/Contents/Developer
++ local udid
+++ create_device_if_needed 'iPhone 15'
+++ local 'name=iPhone 15'
+++ local udid
++++ find_device_udid 'iPhone 15'
++++ local 'name=iPhone 15'
++++ local udid=
++++ command -v python3
+++++ xcrun simctl list devices --json
+++++ python3 - 'iPhone 15'
++++ udid=
++++ [[ -z '' ]]
+++++ xcrun simctl list devices
+++++ sed -nE '/iPhone 15/s/.*\([^)]+\)\s+\(([A-F0-9-]+)\).*/\1/p'
+++++ head -n 1
++++ udid=
++++ echo ''
+++ udid=
+++ [[ -n '' ]]
+++ local runtime
++++ pick_ios_runtime
++++ local runtime=
++++ [[ -n '' ]]
++++ command -v python3
+++++ xcrun simctl list runtimes --json
+++++ python3 -
++++ runtime=
++++ [[ -z '' ]]
+++++ xcrun simctl list runtimes
+++++ awk '/^iOS / && !/unavailable/ && $NF ~ /com.apple.CoreSimulator.SimRuntime.iOS-/ {id=$NF} END{print id}'
++++ runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
++++ echo com.apple.CoreSimulator.SimRuntime.iOS-26-0
+++ runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
+++ [[ -z com.apple.CoreSimulator.SimRuntime.iOS-26-0 ]]
+++ log '创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0'
+++ echo '[INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0'
+[INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
++++ xcrun simctl create 'iPhone 15' com.apple.CoreSimulator.SimDeviceType.iPhone-15 com.apple.CoreSimulator.SimRuntime.iOS-26-0
+++ udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
+++ log $'�\210\233建设�\207�\210\220�\212\237�\23251E5E6D9-4A7B-4372-A180-CFADCBE6EC29'
+++ echo '[INFO] 创建设备成功：51E5E6D9-4A7B-4372-A180-CFADCBE6EC29'
+[INFO] 创建设备成功：51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
+++ echo 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
++ udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
++ boot_and_show_simulator 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
++ local udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
++ local state
+++ xcrun simctl list devices --json
+++ python3 - 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
++ state=

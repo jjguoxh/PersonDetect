@@ -1,0 +1,24 @@
+[CHECK] xcode-select -p:
+/Applications/Xcode.app/Contents/Developer
+
+[CHECK] xcodebuild -version:
+Xcode 26.0.1
+Build version 17A400
+
+[CHECK] simctl path:
+/Applications/Xcode.app/Contents/Developer/usr/bin/simctl
+
+[INFO] Using DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+
+[CHECK] iOS runtimes (top 10):
+iOS 18.6 (18.6 - 22G86) - com.apple.CoreSimulator.SimRuntime.iOS-18-6
+iOS 26.0 (26.0 - 23A343) - com.apple.CoreSimulator.SimRuntime.iOS-26-0
+
+[CHECK] devices matching iPhone 15 (top 10):
+    iPhone 15 (B189D3FC-763E-4693-8D1A-C82D4294BB69) (Shutdown) 
+    iPhone 15 (FE6D0A70-635C-420C-A1CB-5032CC34A822) (Shutdown) 
+    iPhone 15 (9E684ECA-CA4F-4CD6-9E65-ACE34F1D7E0E) (Shutdown) 
+    iPhone 15 (4DDA4F7E-E3A4-4729-BB18-30EB8F323745) (Shutdown) 
+    iPhone 15 (C90DD21D-592D-48EC-A9A3-2E4577D1C63B) (Shutdown) 
+    iPhone 15 (9209B17A-1DA8-4042-9F18-AC3C4C23E638) (Shutdown) 
+    iPhone 15 (CBB7F3C7-4FB7-4DAD-8F45-490C4DB6ACD4) (Shutdown) 
