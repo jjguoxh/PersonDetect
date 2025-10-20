@@ -78,7 +78,30 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
         session.commitConfiguration()
     }
 
-    func startSession() { if !session.isRunning { session.startRunning() } }
+    private func ensureAuthorization(_ completion: @escaping (Bool) -> Void) {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        switch status {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                DispatchQueue.main.async { completion(granted) }
+            }
+        default:
+            completion(false)
+        }
+    }
+    func startSession() {
+        ensureAuthorization { granted in
+            guard granted else { return }
+            guard !self.session.inputs.isEmpty, !self.session.outputs.isEmpty else { return }
+            if !self.session.isRunning {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.session.startRunning()
+                }
+            }
+        }
+    }
     func stopSession() { if session.isRunning { session.stopRunning() } }
 
     private var lastInferenceTS: CFAbsoluteTime = 0

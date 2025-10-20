@@ -22,45 +22,129 @@
 +++ local 'name=iPhone 15'
 +++ local udid=
 +++ command -v python3
-++++ xcrun simctl list devices --json
-++++ python3 - 'iPhone 15'
+++++ echo ''
 +++ udid=
 +++ [[ -z '' ]]
-++++ xcrun simctl list devices
-++++ sed -nE '/iPhone 15/s/.*\([^)]+\)\s+\(([A-F0-9-]+)\).*/\1/p'
-++++ head -n 1
 +++ udid=
 +++ echo ''
 ++ udid=
 ++ [[ -n '' ]]
 ++ local runtime
 +++ pick_ios_runtime
-+++ local runtime=
-+++ [[ -n '' ]]
++++ local target=com.apple.CoreSimulator.SimRuntime.iOS-26-0
++++ local available=
 +++ command -v python3
-++++ xcrun simctl list runtimes --json
-++++ python3 -
-+++ runtime=
-+++ [[ -z '' ]]
-++++ xcrun simctl list runtimes
-++++ awk '/^iOS / && !/unavailable/ && $NF ~ /com.apple.CoreSimulator.SimRuntime.iOS-/ {id=$NF} END{print id}'
-+++ runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
+++++ echo ''
++++ available=
++++ [[ '' == \1 ]]
++++ xcrun simctl list runtimes
++++ grep -q com.apple.CoreSimulator.SimRuntime.iOS-26-0
 +++ echo com.apple.CoreSimulator.SimRuntime.iOS-26-0
++++ return 0
 ++ runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
 ++ [[ -z com.apple.CoreSimulator.SimRuntime.iOS-26-0 ]]
 ++ log '创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0'
 ++ echo '[INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0'
 [INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
 +++ xcrun simctl create 'iPhone 15' com.apple.CoreSimulator.SimDeviceType.iPhone-15 com.apple.CoreSimulator.SimRuntime.iOS-26-0
-++ udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
-++ log $'�\210\233建设�\207�\210\220�\212\237�\23251E5E6D9-4A7B-4372-A180-CFADCBE6EC29'
-++ echo '[INFO] 创建设备成功：51E5E6D9-4A7B-4372-A180-CFADCBE6EC29'
-[INFO] 创建设备成功：51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
-++ echo 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
-+ udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
-+ boot_and_show_simulator 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
-+ local udid=51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
+++ udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
+++ [[ -z 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D ]]
+++ log $'�\210\233建设�\207�\210\220�\212\237�\2326694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
+++ echo '[INFO] 创建设备成功：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
+[INFO] 创建设备成功：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
+++ echo 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ boot_and_show_simulator 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ local udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
 + local state
-++ xcrun simctl list devices --json
-++ python3 - 51E5E6D9-4A7B-4372-A180-CFADCBE6EC29
+++ echo ''
 + state=
++ [[ '' != \B\o\o\t\e\d ]]
++ log $'�\220��\212�设�\207�\2326694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
++ echo '[INFO] 启动设备：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
+[INFO] 启动设备：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ xcrun simctl boot 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ xcrun simctl bootstatus 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D -b
+Monitoring boot status for iPhone 15 (6694176A-E2C6-41AE-BAF8-A1656A5CAC0D).
+[2025-10-20 09:04:21 +0000] Status=1, isTerminal=NO, Elapsed=00:01.
+	Waiting on BackBoard
+
+[2025-10-20 09:04:44 +0000] Status=2, isTerminal=NO, Elapsed=00:25.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.securityd.KeychainMigrator (KeychainMigrator.migrator, user-agnostic)
+		Migration Elapsed:00:00 seconds
+
+[2025-10-20 09:04:45 +0000] Status=2, isTerminal=NO, Elapsed=00:25.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.dataaccess.migrator (DAAccount.migrator)
+		Migration Elapsed:00:01 seconds
+
+[2025-10-20 09:04:46 +0000] Status=4, isTerminal=NO, Elapsed=00:26.
+	Waiting on System App
+
+[2025-10-20 09:04:46 +0000] Status=4, isTerminal=NO, Elapsed=00:26.
+	Waiting on System App
+
+[2025-10-20 09:04:47 +0000] Status=4, isTerminal=NO, Elapsed=00:27.
+	Waiting on System App
+
+[2025-10-20 09:04:48 +0000] Status=4, isTerminal=NO, Elapsed=00:28.
+	Waiting on System App
+
+[2025-10-20 09:04:49 +0000] Status=4, isTerminal=NO, Elapsed=00:29.
+	Waiting on System App
+
+[2025-10-20 09:04:50 +0000] Status=4, isTerminal=NO, Elapsed=00:30.
+	Waiting on System App
+
+[2025-10-20 09:04:51 +0000] Status=4, isTerminal=NO, Elapsed=00:31.
+	Waiting on System App
+
+[2025-10-20 09:04:52 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:32.
+	Finished
+
++ log '打开 Simulator 应用'
++ echo '[INFO] 打开 Simulator 应用'
+[INFO] 打开 Simulator 应用
++ open -a Simulator
++ build_install_launch 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ local udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ log $'�\200�\213�\236\204建�\232scheme=RealTimeDetectApp�\214�\233��\207设�\207=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
++ echo '[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
+[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ command -v xcpretty
++ xcodebuild -project RealTimeDetectApp.xcodeproj -scheme RealTimeDetectApp -configuration Debug -derivedDataPath build -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project RealTimeDetectApp.xcodeproj -scheme RealTimeDetectApp -configuration Debug -derivedDataPath build -destination "generic/platform=iOS Simulator" CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+2025-10-20 17:04:57.160 xcodebuild[18796:92166] Writing error result bundle to /var/folders/0_/yzdbtr352sqfgtjw9dn7__7h0000gn/T/ResultBundle_2025-20-10_17-04-0057.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ generic:1, platform:iOS Simulator }
+
+	Available destinations for the "RealTimeDetectApp" scheme:
+		{ platform:macOS, arch:arm64, id:00008112-001438940AA3C01E, name:My Mac }
+		{ platform:macOS, arch:x86_64, id:00008112-001438940AA3C01E, name:My Mac }
+		{ platform:macOS, name:Any Mac }
++ true
++ local app_path=build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
++ [[ ! -d build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app ]]
++ log '安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app'
++ echo '[INFO] 安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app'
+[INFO] 安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
++ xcrun simctl install 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
++ local bundle_id
+++ /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Info.plist
++ bundle_id=com.example.RealTimeDetectApp
++ [[ -z com.example.RealTimeDetectApp ]]
++ log '启动 App：com.example.RealTimeDetectApp'
++ echo '[INFO] 启动 App：com.example.RealTimeDetectApp'
+[INFO] 启动 App：com.example.RealTimeDetectApp
++ xcrun simctl launch 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D com.example.RealTimeDetectApp
+com.example.RealTimeDetectApp: 18901
++ log '完成：已在 iPhone 15 启动 RealTimeDetectApp'
++ echo '[INFO] 完成：已在 iPhone 15 启动 RealTimeDetectApp'
+[INFO] 完成：已在 iPhone 15 启动 RealTimeDetectApp

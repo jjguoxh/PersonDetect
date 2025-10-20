@@ -24,36 +24,30 @@ ensure_developer_dir() {
 }
 
 pick_ios_runtime() {
-  local runtime=""
-  if [[ -n "${IOS_RUNTIME_IDENTIFIER:-}" ]]; then
-    echo "${IOS_RUNTIME_IDENTIFIER}"; return 0
-  fi
+  local target="com.apple.CoreSimulator.SimRuntime.iOS-26-0"
+  local available=""
   if command -v python3 >/dev/null 2>&1; then
-    runtime=$( { xcrun simctl list runtimes --json | python3 - <<'PY'
-import sys, json, re
+    available=$( { xcrun simctl list runtimes --json | python3 - <<'PY'
+import sys, json
 try:
     data = json.load(sys.stdin)
 except Exception:
     print(""); sys.exit(0)
-rts = [r for r in data.get('runtimes', []) if r.get('platform') == 'iOS' and r.get('available', True) and str(r.get('identifier','')).startswith('com.apple.CoreSimulator.SimRuntime.iOS')]
-
-def verkey(rt):
-    m = re.search(r'iOS-(\d+)-(\d+)', rt.get('identifier',''))
-    if m:
-        return (int(m.group(1)), int(m.group(2)))
-    m = re.search(r'iOS-(\d+)', rt.get('identifier',''))
-    if m:
-        return (int(m.group(1)), 0)
-    return (0, 0)
-rts.sort(key=verkey, reverse=True)
-print(rts[0]['identifier'] if rts else "")
+for rt in data.get("runtimes", []):
+    if rt.get("identifier") == "com.apple.CoreSimulator.SimRuntime.iOS-26-0" and rt.get("available", True):
+        print("1"); sys.exit(0)
+print("")
 PY
     } 2>/dev/null || echo "" )
   fi
-  if [[ -z "${runtime}" ]]; then
-    runtime=$(xcrun simctl list runtimes 2>/dev/null | awk '/^iOS / && !/unavailable/ && $NF ~ /com.apple.CoreSimulator.SimRuntime.iOS-/ {id=$NF} END{print id}')
+  if [[ "${available}" == "1" ]]; then
+    echo "${target}"; return 0
   fi
-  echo "${runtime}"
+  if xcrun simctl list runtimes 2>/dev/null | grep -q "com.apple.CoreSimulator.SimRuntime.iOS-26-0"; then
+    echo "${target}"; return 0
+  fi
+  err "未找到 iOS 26.0 Runtime（com.apple.CoreSimulator.SimRuntime.iOS-26-0）。请在 Xcode -> Settings -> Platforms 中安装。"
+  echo ""
 }
 
 find_device_udid() {
@@ -70,6 +64,8 @@ except Exception:
 booted = None
 first = None
 for rt, devs in data.get('devices', {}).items():
+    if 'iOS-26-0' not in rt:
+        continue
     for d in devs:
         if d.get('name') == name and 'udid' in d:
             if first is None:
@@ -84,7 +80,8 @@ PY
     } 2>/dev/null || echo "" )
   fi
   if [[ -z "${udid}" ]]; then
-    udid=$(xcrun simctl list devices 2>/dev/null | sed -nE "/${name}/s/.*\([^)]+\)\s+\(([A-F0-9-]+)\).*/\1/p" | head -n 1)
+    # 文本模式无法安全过滤运行时，返回空以便后续创建 26.0 设备
+    udid=""
   fi
   echo "${udid}"
 }
@@ -125,7 +122,7 @@ build_install_launch() {
       -scheme "${SCHEME}" \
       -configuration Debug \
       -derivedDataPath "${DERIVED_DATA}" \
-      -destination "platform=iOS Simulator,id=${udid}" \
+      -destination "generic/platform=iOS Simulator" \
       CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
       build | xcpretty || true
   else
@@ -134,7 +131,7 @@ build_install_launch() {
       -scheme "${SCHEME}" \
       -configuration Debug \
       -derivedDataPath "${DERIVED_DATA}" \
-      -destination "platform=iOS Simulator,id=${udid}" \
+      -destination "generic/platform=iOS Simulator" \
       CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
       build || true
   fi
