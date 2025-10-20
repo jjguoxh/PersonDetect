@@ -36,9 +36,9 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
         overlayLayer.contentsScale = UIScreen.main.scale
 
         // Configure aggregated layers once
-        ellipsesLayer.strokeColor = UIColor.yellow.cgColor
-        ellipsesLayer.fillColor = UIColor.yellow.withAlphaComponent(0.2).cgColor
-        ellipsesLayer.lineWidth = 3
+        ellipsesLayer.fillColor = UIColor.clear.cgColor
+        ellipsesLayer.strokeColor = UIColor.systemYellow.cgColor
+        ellipsesLayer.lineWidth = 2
         ellipsesLayer.contentsScale = UIScreen.main.scale
         overlayLayer.addSublayer(ellipsesLayer)
 

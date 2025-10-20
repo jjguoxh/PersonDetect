@@ -87,12 +87,7 @@ enum OverlayRenderer {
                 width: CGFloat(b.size.width) * w,
                 height: CGFloat(b.size.height) * h
             )
-            let centerX = rect.midX
-            let centerY = rect.maxY
-            let ellipseWidth = rect.width / 2.0
-            let ellipseHeight = max(8.0, rect.height / 8.0)
-            let ellipseRect = CGRect(x: centerX - ellipseWidth / 2.0, y: centerY - ellipseHeight / 2.0, width: ellipseWidth, height: ellipseHeight)
-            path.addEllipse(in: ellipseRect)
+            path.addRect(rect)
         }
         return path
     }
