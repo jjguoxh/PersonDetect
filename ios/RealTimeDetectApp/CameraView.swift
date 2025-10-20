@@ -14,6 +14,20 @@ struct CameraView: View {
                     .onAppear { controller.startSession() }
                     .onDisappear { controller.stopSession() }
                 OverlayContainer(layer: controller.overlayLayer)
+                // 状态文本叠加（用于模型加载/检测结果提示）
+                VStack {
+                    HStack {
+                        Text(controller.statusText)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .padding(8)
+                            .background(Color.black.opacity(0.4))
+                            .cornerRadius(8)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .padding()
             }
             .background(Color.black)
             .ignoresSafeArea() // 让预览层与覆盖层在 iPhone/iPad 上都填满屏幕安全区域

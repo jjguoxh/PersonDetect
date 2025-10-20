@@ -13,6 +13,7 @@
 		EAB001000000000000000014 /* DetectionPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB001000000000000000104 /* DetectionPipeline.swift */; };
 		EAB001000000000000000015 /* OverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB001000000000000000105 /* OverlayRenderer.swift */; };
 		EAB001000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAB001000000000000000107 /* Assets.xcassets */; };
+		EAB001000000000000000021 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EAB001000000000000000109 /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EAB001000000000000000106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAB001000000000000000107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAB001000000000000000108 /* RealTimeDetectApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = RealTimeDetectApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAB001000000000000000109 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				EAB001000000000000000105 /* OverlayRenderer.swift */,
 				EAB001000000000000000106 /* Info.plist */,
 				EAB001000000000000000107 /* Assets.xcassets */,
+				EAB001000000000000000109 /* Models */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAB001000000000000000020 /* Assets.xcassets in Resources */,
+				EAB001000000000000000021 /* Models in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

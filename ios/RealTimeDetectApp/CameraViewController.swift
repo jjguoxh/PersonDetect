@@ -11,12 +11,18 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
     var confidence: Float = 0.5
     var kpThreshold: Float = 0.3
 
+    @Published var statusText: String = ""
+
     private let videoOutput = AVCaptureVideoDataOutput()
     private let queue = DispatchQueue(label: "camera.sample.queue")
 
     // Pipelines
     private var objectPipeline: ObjectDetectPipeline?
     private var posePipeline: PoseDetectPipeline?
+
+    // Fallback: Apple Human Body Pose
+    private var applePoseRequest: VNDetectHumanBodyPoseRequest?
+    private let visionSequence = VNSequenceRequestHandler()
 
     // Aggregated overlay layers (GPU friendly)
     private let ellipsesLayer = CAShapeLayer()
@@ -56,6 +62,14 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
         // 尝试加载bundle中的模型；请将模型添加到Xcode工程的资源中
         objectPipeline = try? ObjectDetectPipeline(modelName: "yolo11x")
         posePipeline = try? PoseDetectPipeline(modelName: "yolon-pose")
+        if posePipeline == nil {
+            // 使用Apple内置人体姿态作为后备
+            applePoseRequest = VNDetectHumanBodyPoseRequest()
+            statusText = "未找到自定义姿态模型，使用Apple人体姿态"
+            print("[Camera] Pose model missing, using Apple VNDetectHumanBodyPoseRequest fallback")
+        } else {
+            statusText = "模型加载成功"
+        }
     }
 
     func configureSession() {
@@ -93,8 +107,8 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
     }
     func startSession() {
         ensureAuthorization { granted in
-            guard granted else { return }
-            guard !self.session.inputs.isEmpty, !self.session.outputs.isEmpty else { return }
+            guard granted else { self.statusText = "相机未授权"; return }
+            guard !self.session.inputs.isEmpty, !self.session.outputs.isEmpty else { self.statusText = "相机会话未就绪"; return }
             if !self.session.isRunning {
                 DispatchQueue.global(qos: .userInitiated).async {
                     self.session.startRunning()
@@ -128,7 +142,10 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
                     self.poseLinesLayer.path = nil
                     self.poseCirclesLayer.path = nil
                     CATransaction.commit()
+                    self.statusText = results.isEmpty ? "未检测到目标" : "检测到目标：\(results.count)"
                 }
+            } else {
+                DispatchQueue.main.async { self.statusText = "对象模型未加载" }
             }
         case .pose:
             if let poses = try? posePipeline?.predictPoses(in: pixelBuffer, confidence: confidence, kpThreshold: kpThreshold) {
@@ -142,7 +159,73 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
                     self.poseLinesLayer.path = paths.lines
                     self.poseCirclesLayer.path = paths.circles
                     CATransaction.commit()
+                    self.statusText = poses.isEmpty ? "未检测到人" : "检测到人：\(poses.count)"
                 }
+            } else if let req = applePoseRequest {
+                // Fallback using Apple VNDetectHumanBodyPoseRequest
+                var poses: [Pose] = []
+                do {
+                    try visionSequence.perform([req], on: pixelBuffer)
+                    if let obs = req.results as? [VNHumanBodyPoseObservation] {
+                        let frameSize = self.overlayLayer.bounds.size
+                        let w = frameSize.width
+                        let h = frameSize.height
+                        let sFitPre = min(640.0 / w, 640.0 / h)
+                        let padX = (640.0 - w * sFitPre) / 2.0
+                        let padY = (640.0 - h * sFitPre) / 2.0
+                        for o in obs {
+                            guard let points = try? o.recognizedPoints(.all) else { continue }
+                            // COCO17顺序的映射
+                            let order: [VNHumanBodyPoseObservation.JointName] = [
+                                .nose, .leftEye, .rightEye, .leftEar, .rightEar,
+                                .leftShoulder, .rightShoulder, .leftElbow, .rightElbow,
+                                .leftWrist, .rightWrist, .leftHip, .rightHip,
+                                .leftKnee, .rightKnee, .leftAnkle, .rightAnkle
+                            ]
+                            var kps: [Keypoint] = []
+                            var xs: [CGFloat] = []
+                            var ys: [CGFloat] = []
+                            for j in order {
+                                if let p = points[j], p.confidence >= kpThreshold {
+                                    // 转换到原图坐标，再映射到640 letterbox坐标
+                                    let xOrig = CGFloat(p.x) * w
+                                    let yOrig = (1.0 - CGFloat(p.y)) * h
+                                    let mx = padX + xOrig * sFitPre
+                                    let my = padY + yOrig * sFitPre
+                                    kps.append(Keypoint(x: mx, y: my, conf: p.confidence))
+                                    xs.append(mx); ys.append(my)
+                                } else {
+                                    // 占位，降低valid计数
+                                    kps.append(Keypoint(x: 0, y: 0, conf: 0))
+                                }
+                            }
+                            let validCount = kps.reduce(0) { $1.conf >= kpThreshold ? $0 + 1 : $0 }
+                            if validCount < 6 { continue }
+                            let minX = xs.min() ?? 0
+                            let maxX = xs.max() ?? 0
+                            let minY = ys.min() ?? 0
+                            let maxY = ys.max() ?? 0
+                            let bbox = CGRect(x: minX, y: minY, width: max(0, maxX - minX), height: max(0, maxY - minY))
+                            poses.append(Pose(bbox: bbox, score: Float(validCount) / 17.0, keypoints: kps))
+                        }
+                    }
+                } catch {
+                    print("[Camera] Apple pose request failed: \(error)")
+                }
+                DispatchQueue.main.async {
+                    let frameSize = self.overlayLayer.bounds.size
+                    CATransaction.begin(); CATransaction.setDisableActions(true)
+                    self.ellipsesLayer.path = nil
+                    self.poseLinesLayer.frame = CGRect(origin: .zero, size: frameSize)
+                    self.poseCirclesLayer.frame = CGRect(origin: .zero, size: frameSize)
+                    let paths = OverlayRenderer.makePosePaths(poses: poses, frameSize: frameSize)
+                    self.poseLinesLayer.path = paths.lines
+                    self.poseCirclesLayer.path = paths.circles
+                    CATransaction.commit()
+                    self.statusText = poses.isEmpty ? "未检测到人（Apple后备）" : "检测到人：\(poses.count)（Apple后备）"
+                }
+            } else {
+                DispatchQueue.main.async { self.statusText = "姿态模型未加载" }
             }
         }
     }
