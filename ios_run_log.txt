@@ -47,71 +47,79 @@
 ++ echo '[INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0'
 [INFO] 创建设备：iPhone 15，runtime=com.apple.CoreSimulator.SimRuntime.iOS-26-0
 +++ xcrun simctl create 'iPhone 15' com.apple.CoreSimulator.SimDeviceType.iPhone-15 com.apple.CoreSimulator.SimRuntime.iOS-26-0
-++ udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-++ [[ -z 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D ]]
-++ log $'�\210\233建设�\207�\210\220�\212\237�\2326694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-++ echo '[INFO] 创建设备成功：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-[INFO] 创建设备成功：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-++ echo 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ boot_and_show_simulator 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ local udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
+++ udid=DDC66CF7-8C16-4E36-9120-7425FB376C26
+++ [[ -z DDC66CF7-8C16-4E36-9120-7425FB376C26 ]]
+++ log $'�\210\233建设�\207�\210\220�\212\237�\232DDC66CF7-8C16-4E36-9120-7425FB376C26'
+++ echo '[INFO] 创建设备成功：DDC66CF7-8C16-4E36-9120-7425FB376C26'
+[INFO] 创建设备成功：DDC66CF7-8C16-4E36-9120-7425FB376C26
+++ echo DDC66CF7-8C16-4E36-9120-7425FB376C26
++ udid=DDC66CF7-8C16-4E36-9120-7425FB376C26
++ boot_and_show_simulator DDC66CF7-8C16-4E36-9120-7425FB376C26
++ local udid=DDC66CF7-8C16-4E36-9120-7425FB376C26
 + local state
 ++ echo ''
 + state=
 + [[ '' != \B\o\o\t\e\d ]]
-+ log $'�\220��\212�设�\207�\2326694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-+ echo '[INFO] 启动设备：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-[INFO] 启动设备：6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ xcrun simctl boot 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ xcrun simctl bootstatus 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D -b
-Monitoring boot status for iPhone 15 (6694176A-E2C6-41AE-BAF8-A1656A5CAC0D).
-[2025-10-20 09:04:21 +0000] Status=1, isTerminal=NO, Elapsed=00:01.
++ log $'�\220��\212�设�\207�\232DDC66CF7-8C16-4E36-9120-7425FB376C26'
++ echo '[INFO] 启动设备：DDC66CF7-8C16-4E36-9120-7425FB376C26'
+[INFO] 启动设备：DDC66CF7-8C16-4E36-9120-7425FB376C26
++ xcrun simctl boot DDC66CF7-8C16-4E36-9120-7425FB376C26
++ xcrun simctl bootstatus DDC66CF7-8C16-4E36-9120-7425FB376C26 -b
+Monitoring boot status for iPhone 15 (DDC66CF7-8C16-4E36-9120-7425FB376C26).
+[2025-10-20 09:17:26 +0000] Status=1, isTerminal=NO, Elapsed=00:02.
 	Waiting on BackBoard
 
-[2025-10-20 09:04:44 +0000] Status=2, isTerminal=NO, Elapsed=00:25.
+[2025-10-20 09:17:49 +0000] Status=2, isTerminal=NO, Elapsed=00:25.
 	Waiting on Data Migration
 		Reason:Running plugin com.apple.securityd.KeychainMigrator (KeychainMigrator.migrator, user-agnostic)
 		Migration Elapsed:00:00 seconds
 
-[2025-10-20 09:04:45 +0000] Status=2, isTerminal=NO, Elapsed=00:25.
+[2025-10-20 09:17:49 +0000] Status=2, isTerminal=NO, Elapsed=00:26.
 	Waiting on Data Migration
-		Reason:Running plugin com.apple.dataaccess.migrator (DAAccount.migrator)
+		Reason:Running plugin com.apple.MobileSafari.migrator (MobileSafari.migrator)
 		Migration Elapsed:00:01 seconds
 
-[2025-10-20 09:04:46 +0000] Status=4, isTerminal=NO, Elapsed=00:26.
+[2025-10-20 09:17:50 +0000] Status=2, isTerminal=NO, Elapsed=00:26.
+	Waiting on Data Migration
+		Reason:Running plugin com.apple.PreferencesMigrator (PreferencesMigrator.migrator)
+		Migration Elapsed:00:01 seconds
+
+[2025-10-20 09:17:51 +0000] Status=4, isTerminal=NO, Elapsed=00:27.
 	Waiting on System App
 
-[2025-10-20 09:04:46 +0000] Status=4, isTerminal=NO, Elapsed=00:26.
+[2025-10-20 09:17:52 +0000] Status=4, isTerminal=NO, Elapsed=00:28.
 	Waiting on System App
 
-[2025-10-20 09:04:47 +0000] Status=4, isTerminal=NO, Elapsed=00:27.
+[2025-10-20 09:17:53 +0000] Status=4, isTerminal=NO, Elapsed=00:29.
 	Waiting on System App
 
-[2025-10-20 09:04:48 +0000] Status=4, isTerminal=NO, Elapsed=00:28.
+[2025-10-20 09:17:54 +0000] Status=4, isTerminal=NO, Elapsed=00:30.
 	Waiting on System App
 
-[2025-10-20 09:04:49 +0000] Status=4, isTerminal=NO, Elapsed=00:29.
+[2025-10-20 09:17:55 +0000] Status=4, isTerminal=NO, Elapsed=00:31.
 	Waiting on System App
 
-[2025-10-20 09:04:50 +0000] Status=4, isTerminal=NO, Elapsed=00:30.
+[2025-10-20 09:17:56 +0000] Status=4, isTerminal=NO, Elapsed=00:32.
 	Waiting on System App
 
-[2025-10-20 09:04:51 +0000] Status=4, isTerminal=NO, Elapsed=00:31.
+[2025-10-20 09:17:57 +0000] Status=4, isTerminal=NO, Elapsed=00:33.
 	Waiting on System App
 
-[2025-10-20 09:04:52 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:32.
+[2025-10-20 09:17:58 +0000] Status=4, isTerminal=NO, Elapsed=00:34.
+	Waiting on System App
+
+[2025-10-20 09:17:59 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:35.
 	Finished
 
 + log '打开 Simulator 应用'
 + echo '[INFO] 打开 Simulator 应用'
 [INFO] 打开 Simulator 应用
 + open -a Simulator
-+ build_install_launch 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ local udid=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
-+ log $'�\200�\213�\236\204建�\232scheme=RealTimeDetectApp�\214�\233��\207设�\207=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-+ echo '[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D'
-[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=6694176A-E2C6-41AE-BAF8-A1656A5CAC0D
++ build_install_launch DDC66CF7-8C16-4E36-9120-7425FB376C26
++ local udid=DDC66CF7-8C16-4E36-9120-7425FB376C26
++ log $'�\200�\213�\236\204建�\232scheme=RealTimeDetectApp�\214�\233��\207设�\207=DDC66CF7-8C16-4E36-9120-7425FB376C26'
++ echo '[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=DDC66CF7-8C16-4E36-9120-7425FB376C26'
+[INFO] 开始构建：scheme=RealTimeDetectApp，目标设备=DDC66CF7-8C16-4E36-9120-7425FB376C26
 + command -v xcpretty
 + xcodebuild -project RealTimeDetectApp.xcodeproj -scheme RealTimeDetectApp -configuration Debug -derivedDataPath build -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
 Command line invocation:
@@ -121,21 +129,697 @@ Build settings from command line:
     CODE_SIGNING_ALLOWED = NO
     CODE_SIGNING_REQUIRED = NO
 
-2025-10-20 17:04:57.160 xcodebuild[18796:92166] Writing error result bundle to /var/folders/0_/yzdbtr352sqfgtjw9dn7__7h0000gn/T/ResultBundle_2025-20-10_17-04-0057.xcresult
-xcodebuild: error: Unable to find a destination matching the provided destination specifier:
-		{ generic:1, platform:iOS Simulator }
+ComputePackagePrebuildTargetDependencyGraph
 
-	Available destinations for the "RealTimeDetectApp" scheme:
-		{ platform:macOS, arch:arm64, id:00008112-001438940AA3C01E, name:My Mac }
-		{ platform:macOS, arch:x86_64, id:00008112-001438940AA3C01E, name:My Mac }
-		{ platform:macOS, name:Any Mac }
-+ true
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'RealTimeDetectApp' in project 'RealTimeDetectApp' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 6e4b083edf001920e67c593de5b1855f
+Build description path: /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/XCBuildData/6e4b083edf001920e67c593de5b1855f.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/RealTimeDetectApp.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache
+Base directory status changed. Regenerating...
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyStaticMetadataFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyMetadataFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-non-framework-target-headers.hmap (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftConstValuesFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_const_extract_protocols.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.LinkFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.LinkFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-OutputFileMap.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_const_extract_protocols.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftConstValuesFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.LinkFileList (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.LinkFileList
+
+WriteAuxiliaryFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-OutputFileMap.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    write-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-OutputFileMap.json
+
+MkDir /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /bin/mkdir -p /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
+
+MkDir /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/unthinned (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /bin/mkdir -p /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/unthinned
+
+MkDir /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /bin/mkdir -p /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned
+
+GenerateAssetSymbols /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets --compile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app --output-format human-readable-text --notices --warnings --export-dependency-info /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_dependencies --output-partial-info-plist /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator --bundle-identifier com.yoloset.RealTimeDetectApp --generate-swift-asset-symbol-extensions NO --generate-swift-asset-symbols /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CompileAssetCatalogVariant thinned /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets --compile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --compress-pngs --enable-on-demand-resources YES --development-region en --target-device iphone --minimum-deployment-target 17.0 --platform iphonesimulator
+objc[21844]: Class _NoAnimationDelegate is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23A343/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/SwiftUICore.framework/SwiftUICore (0x1453bc130) and /Library/Developer/CoreSimulator/Volumes/iOS_23A343/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore (0x142525198). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+/* com.apple.actool.compilation-results */
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist_thinned
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned/AppIcon60x60@2x.png
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned/AppIcon76x76@2x~ipad.png
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned/Assets.car
+
+
+SwiftDriver RealTimeDetectApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver RealTimeDetectApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_SwiftConcurrencyShims-APBCDG4SMTRFKPH5PIBFWID9F.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_float-EMPOO965YY8P47ZJ91ELDR5W2.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ptrcheck-6U1S8BTWLJJRKRCB6QEWMH1UQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/DeveloperToolsSupport-82A1GYB9H9SJ7WA3BCHQTEHIL.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_AvailabilityInternal-8ZT7X5QAWT3UA9CACJJYDPLPA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stddef-5L208RMG4LPK30UHEZVF5GDE2.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ptrauth-7I6XV2ZL8BB64YJLVM081V6IZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftShims-9RN01BB642NQR669DA3TVKNEX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdarg-B5TCFMWFF1VB57W6HQ577R2BK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_SwiftConcurrencyShims-8ILYMNGEM1HISY3DPL3BOVECZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_float-C2J1M0K4PKVJ875J62B3BBZPD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_AvailabilityInternal-DIH33B1GM8ZHESMBQ9QJMPON4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stddef-8CRRDNPIZASQW17WZXI4XXHAA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ptrcheck-7UORTPMMHT2RWO17C0JQSI4NK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdbool-9RYAQJIKUECJ0I292KO1EU9ZH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftShims-LYDYRQW5JTC6LVHD64WPB3B6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ptrauth-EFZA5L5DV8XGNTILBLIG0H59J.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation1-B1RHQ8Q22PDV9XU591R7EFOAP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdarg-765SEK9FXWGSGCX3WL4RA4Z9X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/DeveloperToolsSupport-3PHYPRIEA454OQDC64FSTXF2P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation1-9TEPYI4EL41LA8S0Q5YT4PL8J.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdbool-CR4EVN6CYNQWJRMOATQEECKEZ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation2-75HNY92O52SJJF0PVRMSDIFSO.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_limits-4AIAA381QJUB03RLP2FVHQOOI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation2-MHH3102PP3YDCECH32XID693.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_limits-BX9ZEVR9IBFNBXCZCB1LU33QR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/sys_types-3A98FKMDGJFJI546TCKLBF5GC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdint-BLZQYKD938RX9VISGILPNNCWE.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_tgmath-AZGTW3DFOI292SW3JZGIS16CR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/sys_types-7AAVV31COA6KWQVW5RBETRWWZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_tgmath-EHOJS1S8F0624AONGZ4PK2FD7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdint-4XEU0O45AUL207MXY4C57ILN1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation3-30SVAKVN7H9JDFQXPQFEAQKHV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdatomic-CQ4VZNHTRTRPAARXRW23WDYJX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_intrinsics-EHMQQUJSVW9XPYMCEOK14ET1H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_stdatomic-28Z5KFN8C5TLNZZIEFGLN2H5X.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_DarwinFoundation3-EJOT4RBUFKX31FIW0PS829F2H.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_inttypes-CNDCPJBP13NPEXKUSRADIYSME.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_intrinsics-5GH6YYEIKZIAM0UA62Y229CRU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/_Builtin_inttypes-9DD2FCB5P5MBB5VNE23RC1C7F.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Darwin-7T4BF7NZ1CUQEXWN7G07M37RA.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Darwin-DJFCDIM41R0VYSBBZTSGF8KJB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/simd-2TQV8WCOKB96LXTLCJZ0P2K0P.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/simd-AISKVBVRBFWMNP3JAWIPU6LK0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/MachO-BWCKKBM8DREL9UCA9L5M1G0FO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ObjectiveC-BKX0U5Z95T08DIF1UNA4X4G5N.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/MachO-4L2ZEE93ZH0FOWKJGUW2XCPOP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ObjectiveC-3CT6K6P989SLK48AQ4YSMSR9L.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os_object-1Q4I8EP9NCAGUND60S7VUDZKI.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os_object-CTUZYWL6EMB6G8CJZ48N16ZEP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os_workgroup-38FS28DOVIK6ES8QX2STWJJCO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os_workgroup-2JXGEHIP2XPVVGV783CGNHHYD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Spatial-3KMW2VUG376EXG40OEBVBRAAP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Dispatch-6AEOX201D87CUUKBNQQHWITE1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Dispatch-4CSZNDX7G9CRTA59VWV28VAOM.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreFoundation-57OGT2SD6NWLZMC7CQS4FC6TT.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/dnssd-EZ5G4URL4WGVWKG63G148BR90.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/XPC-IGQYVLUMRS5DZQV0WE43FVAF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/XPC-2ZEGZHGIDMYQAFV0Q0K4K4IHK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/dnssd-5LJ3ND1W55IH11WGPIT6RGDHE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreFoundation-604P1JKENOLIYITHWKRHQHC3V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os-69MICHPFP98NMCGILV3QDHMBA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/os-3SCDG4NNZNCK8G0LBXFJLXX16.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Spatial-E92707RQXLA5UFN275VMWYNSI.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CFNetwork-DG4KHB9VGFWFXD8VAU78JDKKC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Security-ET2GC9XH3WGXIF2P1E5A8UVT.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreAudioTypes-BGGA0VU2IP7FLQCANEZAIJOAQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreGraphics-EERYGVLZC0FTQTZXR9K2KFKDM.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreAudio-ESPJMNUHIOBDTPHCTDMZTPS3U.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CFNetwork-3YPW7TG26Z2LL8RZH8EKABTSI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreAudioTypes-8E2AZ6VC1HP572KS37W8KZOHL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreGraphics-6GTJQPHVQTNDFAAGCBVG4TKMR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Security-5DXIY0FZIOLUJQJH0Y1M8VNE9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Foundation-AFU5NW2K5AZ74HHBBIBGI7P51.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ImageIO-54E6PNC1HJL3B1SESEHQOPE85.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreText-7HLL7W4XKQ0BAV8CEKT120V19.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreAudio-BRBYA5LJA3UKTIW4IWLPMHU80.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Foundation-2XWH887GH8Y3LSLC58AEUARII.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreText-1I2HH8ZWC8NMAYQE11MUWMS31.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/ImageIO-5SUFT4FM2Z8N06RDJRQXVQLX8.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/OSLog-D51L96HTF00E6SZQ6NWB0KBQB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/IOSurface-D4ANCC1DJZ76OS4VUAPLDZ1CR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/OpenGLES-E5IQJ5W5IZYTJ8HQRYCHZIJIT.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/DataDetection-YGL77IISWRA2JVP1S0SBUHE7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreMIDI-BBO599MLRABDOIR9MJP39FCNV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreData-9BRWN8FYUZIKBUU07R8Y2I9PG.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreTransferable-F1A184G8S1A0JBRSA9PXFSRKE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/DataDetection-3RO3DLGBZ0VYE2AD1R5GA4811.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Network-1CNO9WOKQIUSUS8PDA30YETYJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UserNotifications-EHEWZNEM8UD4Z9NOXBQT3ZJKB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/OpenGLES-9Q9KA7JGR995XYH9YYUBDYZPH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreTransferable-7PKLR61ISIKTUWUQWZ1G9MYPJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UniformTypeIdentifiers-A8OI37VD4J335OJ5FRD5I9DYU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/OSLog-ALA9V5P93VKVG92SWGRCXJJLB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/FileProvider-BQA8355B55S8DHW69I75AMKE8.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UIUtilities-D8OFGY0S1HCPM3FI67EMZ8GS6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UIUtilities-BU370I0BE1AHC6NQAK5W6W3JQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/FileProvider-CB82PFB3IANHNH572K0X3MVIO.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Accessibility-4VGUB0UXBISAIX9OF3MYYXC2I.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVRouting-9PMO3JT2N2WXOP08YNIXL705N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/IOSurface-DZJXIRB7YB9CJCY92RXDOQ0NL.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Network-5GK4YNYPTRZWJCTW6MGAZ06AP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Symbols-A5KYIGSO046SCHF5KTU7KLNLH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Symbols-5KGB2HG8TQA39EL4J6XNCY6PZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreMIDI-61TJRDU1XPEG03WTK8H107CYY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Accessibility-1JTKYT6AKWI4YIO2IYIX6JN92.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UserNotifications-EBDQH03YRXADLZ2V48QB91Z7J.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Metal-7A0J7LTYM1EKB8CEF3PK3QB5C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Metal-BU46EZITTC93EN2PHFUJI6567.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AudioToolbox-79PL5ZKTVANGTW9X15VK1AWRD.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UniformTypeIdentifiers-CVA2Q3ZA0NI1PS3IWR97QAVOG.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVRouting-A8FRVKAFYDRGE082D8BZB3XSK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreData-6YASGP8PC6DSXZDMEPBM41GA2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AudioToolbox-2GP1EVLAYQ135A2FWAR64PHGB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreVideo-32JXDH5S88WFETFSBLIP3LYKX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreVideo-BZ6PDUZSD3TWSMJGIO1D7EIDM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Accelerate-4LQLC2XGWHDXEHE6UO1JCFVL5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreMedia-7E22A3ZH3XYWQOF7JPSB9MOQ5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreML-2LCAL7ZBPF0CL1UU7UWMK57HX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreImage-DN8I3E9WGU3PI7FO29RBNIHU0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/QuartzCore-8CKWCOZKONR5J8PY0KSXXMU7W.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Accelerate-9UZXFRJRVKS28X18WNQJHM3MS.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/QuartzCore-9EVYPL1D135PXN3RKGAIUODQD.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreMedia-9XR9ZBAWQJGQ582CYZCEYPAZ7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreImage-8S56FRK8CO1VV91LKVYN3PXGF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftUICore-EA5LU5FSJZ25OHGCJLIO293QJ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/CoreML-4JN6LC8UF72CPXDUFAWPDCH7K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftUICore-MI64E12Q966HY9E5JNIOX3UN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/MediaToolbox-AN8NR4FRPUXMC5HUQWLLQGQHE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVFAudio-A9JVHWNZQU8NXWQEUH8N1J5AU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UIKit-DVMPRJGS3Y0V5TF3H9JT81U5P.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/MediaToolbox-1WTOLSCJW2ZFLSM07NKZFHU4V.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/UIKit-15CK3UFXMXU1MSL34GPD2YQ52.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Vision-BSY8TA58V8XTLJ99YB1G388F0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Vision-XCHAUUUWQ4TIE6X9CHH1ZVCS.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVFAudio-2NY37WCABCU5RUL5C7G10ROEW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVFoundation-7GCDM9AXJVUBCEJHOY8TN7LUA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/AVFoundation-2Q9RTP4MEE8TQCZXCM7MWLSB6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftUI-12V4U3NCP0YXQVF66XCAD0CE9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/SwiftUI-AVZ9P6JFF3KQPAQHRZMBCX7DP.pcm
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ RealTimeDetectApp (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+EmitSwiftModule normal x86_64 (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+SwiftCompile normal x86_64 Compiling\ CameraView.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift:27:18: warning: 'onChange(of:perform:)' was deprecated in iOS 17.0: Use `onChange` with a two or zero parameter action closure instead.
+                .onChange(of: mode) { newValue in controller.mode = newValue }
+                 ^
+
+SwiftCompile normal x86_64 Compiling\ OverlayRenderer.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift:120:18: warning: immutable value 'i' was never used; consider replacing with '_' or removing it
+            for (i, kp) in pose.keypoints.enumerated() {
+                 ^
+                 _
+
+SwiftCompile normal x86_64 Compiling\ App.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+SwiftCompile normal x86_64 Compiling\ DetectionPipeline.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift:27:13: warning: 'usesCPUOnly' was deprecated in iOS 17.0
+        req.usesCPUOnly = false
+            ^
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift:71:13: warning: 'usesCPUOnly' was deprecated in iOS 17.0
+        req.usesCPUOnly = false
+            ^
+
+SwiftCompile normal x86_64 Compiling\ CameraViewController.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift:76:18: warning: 'videoOrientation' was deprecated in iOS 17.0: Use -videoRotationAngle instead
+            conn.videoOrientation = .portrait
+                 ^
+
+SwiftCompile normal x86_64 Compiling\ GeneratedAssetSymbols.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ RealTimeDetectApp (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+EmitSwiftModule normal arm64 (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+SwiftCompile normal arm64 Compiling\ App.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+SwiftCompile normal arm64 Compiling\ CameraView.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraView.swift:27:18: warning: 'onChange(of:perform:)' was deprecated in iOS 17.0: Use `onChange` with a two or zero parameter action closure instead.
+                .onChange(of: mode) { newValue in controller.mode = newValue }
+                 ^
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for RealTimeDetectApp (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal x86_64 Compiling App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriver\ Compilation\ Requirements RealTimeDetectApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal x86_64 Compiling OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 Compiling\ GeneratedAssetSymbols.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+SwiftDriverJobDiscovery normal x86_64 Compiling CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftdoc (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftdoc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.abi.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.abi.json /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftsourceinfo (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftsourceinfo /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+SwiftCompile normal arm64 Compiling\ DetectionPipeline.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift:27:13: warning: 'usesCPUOnly' was deprecated in iOS 17.0
+        req.usesCPUOnly = false
+            ^
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/DetectionPipeline.swift:71:13: warning: 'usesCPUOnly' was deprecated in iOS 17.0
+        req.usesCPUOnly = false
+            ^
+
+SwiftCompile normal arm64 Compiling\ CameraViewController.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/CameraViewController.swift:76:18: warning: 'videoOrientation' was deprecated in iOS 17.0: Use -videoRotationAngle instead
+            conn.videoOrientation = .portrait
+                 ^
+
+SwiftDriverJobDiscovery normal x86_64 Compiling CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 Compiling\ OverlayRenderer.swift /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftCompile normal arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/OverlayRenderer.swift:120:18: warning: immutable value 'i' was never used; consider replacing with '_' or removing it
+            for (i, kp) in pose.keypoints.enumerated() {
+                 ^
+                 _
+
+SwiftDriverJobDiscovery normal arm64 Compiling App.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling GeneratedAssetSymbols.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for RealTimeDetectApp (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriver\ Compilation\ Requirements RealTimeDetectApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/RealTimeDetectApp-Swift.h /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-Swift.h /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-Swift.h (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-swiftHeaderTool -arch arm64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-Swift.h -arch x86_64 /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-Swift.h -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/RealTimeDetectApp-Swift.h
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftdoc (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftdoc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.abi.json (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.abi.json /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftsourceinfo (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftsourceinfo /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal x86_64 Compiling DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriver\ Compilation RealTimeDetectApp normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/x86_64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/Binary/RealTimeDetectApp normal x86_64 (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -Os -L/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -filelist /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_lto.o -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.swiftmodule @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp-linker-args.resp -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/Binary/RealTimeDetectApp
+
+SwiftDriverJobDiscovery normal arm64 Compiling OverlayRenderer.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling CameraViewController.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling CameraView.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriverJobDiscovery normal arm64 Compiling DetectionPipeline.swift (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+SwiftDriver\ Compilation RealTimeDetectApp normal arm64 com.apple.xcode.tools.swift.compiler (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name RealTimeDetectApp -O -enforce-exclusivity\=checked @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/SDKStatCaches.noindex/iphonesimulator26.0-23A339-26257891a6c027eb51374368541b8346.sdkstatcache -output-file-map /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -sdk-module-cache-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_const_extract_protocols.json -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-generated-files.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-own-target-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-all-target-headers.hmap -Xcc -iquote -Xcc /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp-project-headers.hmap -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources-normal/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources/arm64 -Xcc -I/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-Swift.h -working-directory /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/Binary/RealTimeDetectApp normal arm64 (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk -Os -L/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -F/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator -filelist /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -dead_strip -Xlinker -object_path_lto -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_lto.o -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.swiftmodule @/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp-linker-args.resp -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/Binary/RealTimeDetectApp
+
+CreateUniversalBinary /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp normal arm64\ x86_64 (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/Binary/RealTimeDetectApp /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/Binary/RealTimeDetectApp -output /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp
+
+LinkAssetCatalog /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Assets.xcassets (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-linkAssetCatalog --thinned /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/thinned --thinned-dependencies /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist_unthinned --output /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app --plist-output /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/AppIcon60x60@2x.png (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+note: Emplaced /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/AppIcon76x76@2x~ipad.png (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+note: Emplaced /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Assets.car (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+ProcessInfoPlistFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Info.plist /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Info.plist (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-infoPlistUtility /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/assetcatalog_generated_info.plist -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Info.plist
+warning: User supplied UIDeviceFamily key in the Info.plist will be overwritten. Please use the build setting TARGETED_DEVICE_FAMILY and remove UIDeviceFamily from your Info.plist. (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+/Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/RealTimeDetectApp.xcodeproj: warning: User-supplied CFBundleIdentifier value 'com.example.RealTimeDetectApp' in the Info.plist must be the same as the PRODUCT_BUNDLE_IDENTIFIER build setting value 'com.yoloset.RealTimeDetectApp'. (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+
+CopySwiftLibs /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp --scan-folder /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Frameworks --scan-folder /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/PlugIns --scan-folder /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/SystemExtensions --scan-folder /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Extensions --platform iphonesimulator --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name RealTimeDetectApp --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.0.sdk --xcode-version 17A400 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.yoloset.RealTimeDetectApp --output /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app --target-triple arm64-apple-ios17.0-simulator --target-triple x86_64-apple-ios17.0-simulator --binary-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp --dependency-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp_dependency_info.dat --dependency-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp_dependency_info.dat --stringsdata-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftFileList --source-file-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftFileList --metadata-file-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyMetadataFileList --static-metadata-file-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyStaticMetadataFileList --swift-const-vals-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/arm64/RealTimeDetectApp.SwiftConstValuesFileList --swift-const-vals-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/Objects-normal/x86_64/RealTimeDetectApp.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-10-20 17:18:22.660 appintentsmetadataprocessor[21970:120679] Starting appintentsmetadataprocessor export
+2025-10-20 17:18:22.669 appintentsmetadataprocessor[21970:120679] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+GenerateDSYMFile /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app.dSYM /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/RealTimeDetectApp -o /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app.dSYM
+
+AppIntentsSSUTraining (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Info.plist --temp-dir-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/ssu --bundle-id com.yoloset.RealTimeDetectApp --product-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app --extracted-metadata-path /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Metadata.appintents --metadata-file-list /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Intermediates.noindex/RealTimeDetectApp.build/Debug-iphonesimulator/RealTimeDetectApp.build/RealTimeDetectApp.DependencyMetadataFileList --archive-ssu-assets
+2025-10-20 17:18:22.733 appintentsnltrainingprocessor[21973:120701] Parsing options for appintentsnltrainingprocessor
+2025-10-20 17:18:22.734 appintentsnltrainingprocessor[21973:120701] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-RegisterExecutionPolicyException /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
+
+Validate /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    builtin-validationUtility /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+    cd /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp
+    /usr/bin/touch -c /Users/guoxh/Documents/project/yoloset/ios/RealTimeDetectApp/build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
+
+warning: Traditional headermap style is no longer supported; please migrate to using separate headermaps and set 'ALWAYS_SEARCH_USER_PATHS' to NO. (in target 'RealTimeDetectApp' from project 'RealTimeDetectApp')
+** BUILD SUCCEEDED **
+
 + local app_path=build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
 + [[ ! -d build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app ]]
 + log '安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app'
 + echo '[INFO] 安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app'
 [INFO] 安装 App：build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
-+ xcrun simctl install 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
++ xcrun simctl install DDC66CF7-8C16-4E36-9120-7425FB376C26 build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app
 + local bundle_id
 ++ /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' build/Build/Products/Debug-iphonesimulator/RealTimeDetectApp.app/Info.plist
 + bundle_id=com.example.RealTimeDetectApp
@@ -143,8 +827,8 @@ xcodebuild: error: Unable to find a destination matching the provided destinatio
 + log '启动 App：com.example.RealTimeDetectApp'
 + echo '[INFO] 启动 App：com.example.RealTimeDetectApp'
 [INFO] 启动 App：com.example.RealTimeDetectApp
-+ xcrun simctl launch 6694176A-E2C6-41AE-BAF8-A1656A5CAC0D com.example.RealTimeDetectApp
-com.example.RealTimeDetectApp: 18901
++ xcrun simctl launch DDC66CF7-8C16-4E36-9120-7425FB376C26 com.example.RealTimeDetectApp
+com.example.RealTimeDetectApp: 22042
 + log '完成：已在 iPhone 15 启动 RealTimeDetectApp'
 + echo '[INFO] 完成：已在 iPhone 15 启动 RealTimeDetectApp'
 [INFO] 完成：已在 iPhone 15 启动 RealTimeDetectApp
