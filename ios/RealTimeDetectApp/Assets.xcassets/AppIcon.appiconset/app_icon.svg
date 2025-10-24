@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 从左下角到右上角的紫色渐变 -->
+    <linearGradient id="purpleGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4C1D95;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1024" height="1024" fill="url(#purpleGradient)" rx="180" ry="180"/>
+  
+  <!-- 街舞小人轮廓 -->
+  <g transform="translate(512, 512)" fill="white" stroke="white" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <!-- 头部 -->
+    <circle cx="0" cy="-180" r="45" fill="white"/>
+    
+    <!-- 身体主干 -->
+    <path d="M 0 -135 L 0 -20" stroke-width="12"/>
+    
+    <!-- 左臂 (街舞动作 - 向上伸展) -->
+    <path d="M 0 -100 L -80 -160 L -120 -140" stroke-width="10" fill="none"/>
+    <!-- 左手 -->
+    <circle cx="-120" cy="-140" r="12" fill="white"/>
+    
+    <!-- 右臂 (街舞动作 - 向侧面伸展) -->
+    <path d="M 0 -100 L 90 -80 L 130 -60" stroke-width="10" fill="none"/>
+    <!-- 右手 -->
+    <circle cx="130" cy="-60" r="12" fill="white"/>
+    
+    <!-- 腰部到臀部 -->
+    <path d="M 0 -20 L 0 40" stroke-width="12"/>
+    
+    <!-- 左腿 (街舞动作 - 弯曲踢腿) -->
+    <path d="M 0 40 L -60 80 L -40 140" stroke-width="10" fill="none"/>
+    <!-- 左脚 -->
+    <ellipse cx="-40" cy="140" rx="20" ry="8" fill="white"/>
+    
+    <!-- 右腿 (街舞动作 - 支撑腿) -->
+    <path d="M 0 40 L 30 120 L 25 180" stroke-width="10" fill="none"/>
+    <!-- 右脚 -->
+    <ellipse cx="25" cy="180" rx="20" ry="8" fill="white"/>
+    
+    <!-- 添加一些动感元素 - 运动线条 -->
+    <g stroke="white" stroke-width="3" fill="none" opacity="0.6">
+      <path d="M -140 -120 Q -160 -110 -150 -90"/>
+      <path d="M 150 -40 Q 170 -30 160 -10"/>
+      <path d="M -60 160 Q -80 170 -70 190"/>
+    </g>
+  </g>
+</svg>

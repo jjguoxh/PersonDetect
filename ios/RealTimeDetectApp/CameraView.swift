@@ -33,7 +33,7 @@ struct CameraView: View {
         .safeAreaInset(edge: .bottom) {
             HStack {
                 Picker("模式", selection: $mode) {
-                    Text("椭圆").tag(DetectMode.objects)
+                    Text("人识别").tag(DetectMode.objects)
                     Text("关节").tag(DetectMode.pose)
                 }
                 .pickerStyle(.segmented)

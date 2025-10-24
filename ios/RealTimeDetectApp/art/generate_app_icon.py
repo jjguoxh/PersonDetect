@@ -14,9 +14,9 @@ APPICON = os.path.join(ASSETS, "AppIcon.appiconset")
 
 os.makedirs(APPICON, exist_ok=True)
 
-# 颜色定义（紫色渐变）
-START = (155, 95, 255)   # 顶部浅紫
-END   = (90, 0, 200)     # 底部深紫
+# 颜色定义（紫色渐变：从左下角到右上角）
+START = (139, 92, 246)   # 普通紫色 (#8B5CF6)
+END   = (76, 29, 149)    # 深紫色 (#4C1D95)
 
 def lerp(a, b, t):
     return int(a + (b - a) * t)
@@ -24,12 +24,18 @@ def lerp(a, b, t):
 def make_gradient(w=1024, h=1024):
     img = Image.new("RGB", (w, h), (0, 0, 0))
     px = img.load()
+    # 从左下角到右上角的渐变
     for y in range(h):
-        t = y / (h - 1)
-        r = lerp(START[0], END[0], t)
-        g = lerp(START[1], END[1], t)
-        b = lerp(START[2], END[2], t)
         for x in range(w):
+            # 计算从左下角(0,h-1)到右上角(w-1,0)的距离比例
+            # 左下角为起点(普通紫色)，右上角为终点(深紫色)
+            diagonal_length = sqrt((w - 1) ** 2 + (h - 1) ** 2)
+            current_distance = sqrt(x ** 2 + (h - 1 - y) ** 2)
+            t = min(1.0, current_distance / diagonal_length)
+            
+            r = lerp(START[0], END[0], t)
+            g = lerp(START[1], END[1], t)
+            b = lerp(START[2], END[2], t)
             px[x, y] = (r, g, b)
     # 叠加一个柔和的径向亮斑（营造舞台灯光效果）
     cx, cy = int(w * 0.5), int(h * 0.35)
