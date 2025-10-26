@@ -5,7 +5,7 @@ APP_NAME="RealTimeDetectApp"
 SCHEME="RealTimeDetectApp"
 PROJECT="RealTimeDetectApp.xcodeproj"
 BUNDLE_ID="com.yoloset.RealTimeDetectApp"
-DEVICE_NAME="iPhone 15"
+DEVICE_NAME="iPhone 16"
 DERIVED_DATA="build"
 
 log() { echo "[INFO] $*" >&2; }
@@ -122,7 +122,7 @@ build_install_launch() {
       -scheme "${SCHEME}" \
       -configuration Debug \
       -derivedDataPath "${DERIVED_DATA}" \
-      -destination "generic/platform=iOS Simulator" \
+      -destination "platform=iOS Simulator,id=${udid}" \
       CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
       build | xcpretty || true
   else
@@ -131,7 +131,7 @@ build_install_launch() {
       -scheme "${SCHEME}" \
       -configuration Debug \
       -derivedDataPath "${DERIVED_DATA}" \
-      -destination "generic/platform=iOS Simulator" \
+      -destination "platform=iOS Simulator,id=${udid}" \
       CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
       build || true
   fi
@@ -164,7 +164,7 @@ create_device_if_needed() {
     err "未找到可用的 iOS Runtime"; exit 1
   fi
   log "创建设备：${name}，runtime=${runtime}"
-  udid=$(xcrun simctl create "${name}" com.apple.CoreSimulator.SimDeviceType.iPhone-15 "${runtime}" 2>/dev/null || true)
+  udid=$(xcrun simctl create "${name}" com.apple.CoreSimulator.SimDeviceType.iPhone-16 "${runtime}" 2>/dev/null || true)
   if [[ -z "${udid}" ]]; then
     err "创建设备失败：${name}，runtime=${runtime}"; exit 1
   fi
