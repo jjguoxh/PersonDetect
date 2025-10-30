@@ -60,7 +60,7 @@ final class CameraViewController: NSObject, ObservableObject, AVCaptureVideoData
 
     func setupPipelines() {
         // 尝试加载bundle中的模型；请将模型添加到Xcode工程的资源中
-        objectPipeline = try? ObjectDetectPipeline(modelName: "yolo11x")
+        objectPipeline = try? ObjectDetectPipeline(modelName: "yolo11n")
         posePipeline = try? PoseDetectPipeline(modelName: "yolon-pose")
         if posePipeline == nil {
             // 使用Apple内置人体姿态作为后备

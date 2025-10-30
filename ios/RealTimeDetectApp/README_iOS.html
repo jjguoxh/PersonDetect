@@ -21,8 +21,8 @@
     <h2>模型位置</h2>
     <ul>
       <li>已复制到：<code>ios/RealTimeDetectApp/Models/</code></li>
-      <li>文件：<code>yolo11x.mlpackage</code>、<code>yolon-pose.mlpackage</code></li>
-      <li>代码已优先从 <code>Models/</code> 子目录加载（未找到时回退到 Bundle 根目录）。</li>
+      <li>文件：<code>yolo11n.mlpackage</code>（推荐）或 <code>yolo11x.mlpackage</code>；姿态为 <code>yolon-pose.mlpackage</code></li>
+      <li>对象检测代码优先加载 <code>yolo11n</code>，若未找到则自动回退 <code>yolo11x</code>；均从 <code>Models/</code> 子目录优先加载（未找到时回退 Bundle 根目录）。</li>
     </ul>
   </div>
 
